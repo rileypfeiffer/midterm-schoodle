@@ -13,6 +13,11 @@
 
 .time-slot {
   margin-right: 5em;
+  margin-bottom: 1em;
+}
+
+#time-slot-1 {
+  margin-left: 5em;
 }
 
 .event-field {
@@ -21,6 +26,7 @@
   border: transparent;
   font-family: "Comfortaa";
   border-bottom: 2px solid;
+  margin-bottom: 5em;
 }
 
 .event-info {
@@ -30,4 +36,28 @@
 
 .icon {
   padding-right: 1em;
+  font-size: 1.5em;
+}
+
+.bottom-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Comfortaa";
+}
+
+#description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+  margin-bottom: 2em;
+}
+
+.description-textarea {
+  resize: none;
+  width: 200%;
+}
+
+.create-event {
+  margin: 2em;
 }
