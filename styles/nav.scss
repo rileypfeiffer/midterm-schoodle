@@ -1,0 +1,29 @@
+nav {
+  top: 0;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 120px;
+  color:#FFFFFF;
+  background-color: transparent;
+  width: 100%;
+  font-size: 2em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 1em;
+}
+
+.title {
+  font-family: "Comfortaa";
+}
+
+.search-label {
+  font-family: "Comfortaa";
+  font-size: 0.75em;
+}
+
+.search {
+  font-style: italic;
+  font-size: 0.75em;
+}
+
