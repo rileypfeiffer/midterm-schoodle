@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-event.css" type="text/css" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
@@ -32,8 +33,113 @@
     <input class="search" type="text" placeholder="Search...">
     </div>
   </nav>
-  </header>
-  <h1>Have fun! 🥔</h1>
+  <section id="new-event">
+  <div id="organizer-info">
+    <label for="name">Name: </label>
+    <input type="text">
+    <label for="email">Email: </label>
+    <input type="email">
+  </div>
+  <form id="event-form">
+    <div class="event-info">
+    <i class="fas fa-star icon"></i>
+    <input type="text" class="event-field" placeholder="Event Title">
+    </div>
+    <div class="event-info">
+    <i class="far fa-compass icon"></i>
+    <input type="text" class="event-field" placeholder="Location">
+    </div>
+    <div class="event-info">
+    <i class="fas fa-calendar-week icon"></i>
+    <input type="text" class="event-field" placeholder="Date">
+    </div>
+    <div class="event-info">
+      <i class="far fa-clock icon"></i>
+      <div id="time-slots" class="event-field">
+      <select name="time" class="time-slot">
+        <option value="" disabled selected class="time-placeholder">Time Slot 1</option>
+        <option value="12:00AM">12:00AM</option>
+        <option value="1:00AM">1:00AM</option>
+        <option value="2:00AM">2:00AM</option>
+        <option value="3:00AM">3:00AM</option>
+        <option value="4:00AM">4:00AM</option>
+        <option value="5:00AM">5:00AM</option>
+        <option value="6:00AM">6:00AM</option>
+        <option value="7:00AM">7:00AM</option>
+        <option value="8:00AM">8:00AM</option>
+        <option value="9:00AM">9:00AM</option>
+        <option value="10:00AM">10:00AM</option>
+        <option value="11:00AM">11:00AM</option>
+        <option value="12:00PM">12:00PM</option>
+        <option value="1:00PM">1:00PM</option>
+        <option value="2:00PM">2:00PM</option>
+        <option value="3:00PM">3:00PM</option>
+        <option value="4:00PM">4:00PM</option>
+        <option value="5:00PM">5:00PM</option>
+        <option value="6:00PM">6:00PM</option>
+        <option value="7:00PM">7:00PM</option>
+        <option value="8:00PM">8:00PM</option>
+        <option value="9:00PM">9:00PM</option>
+        <option value="10:00PM">10:00PM</option>
+        <option value="11:00PM">11:00PM</option>
+      </select>
+      <select name="time" class="time-slot">
+        <option value="" disabled selected class="time-placeholder">Time Slot 2</option>
+        <option value="12:00AM">12:00AM</option>
+        <option value="1:00AM">1:00AM</option>
+        <option value="2:00AM">2:00AM</option>
+        <option value="3:00AM">3:00AM</option>
+        <option value="4:00AM">4:00AM</option>
+        <option value="5:00AM">5:00AM</option>
+        <option value="6:00AM">6:00AM</option>
+        <option value="7:00AM">7:00AM</option>
+        <option value="8:00AM">8:00AM</option>
+        <option value="9:00AM">9:00AM</option>
+        <option value="10:00AM">10:00AM</option>
+        <option value="11:00AM">11:00AM</option>
+        <option value="12:00PM">12:00PM</option>
+        <option value="1:00PM">1:00PM</option>
+        <option value="2:00PM">2:00PM</option>
+        <option value="3:00PM">3:00PM</option>
+        <option value="4:00PM">4:00PM</option>
+        <option value="5:00PM">5:00PM</option>
+        <option value="6:00PM">6:00PM</option>
+        <option value="7:00PM">7:00PM</option>
+        <option value="8:00PM">8:00PM</option>
+        <option value="9:00PM">9:00PM</option>
+        <option value="10:00PM">10:00PM</option>
+        <option value="11:00PM">11:00PM</option>
+      </select>
+      <select name="time" class="time-slot">
+        <option value="" disabled selected class="time-placeholder">Time Slot 3</option>
+        <option value="12:00AM">12:00AM</option>
+        <option value="1:00AM">1:00AM</option>
+        <option value="2:00AM">2:00AM</option>
+        <option value="3:00AM">3:00AM</option>
+        <option value="4:00AM">4:00AM</option>
+        <option value="5:00AM">5:00AM</option>
+        <option value="6:00AM">6:00AM</option>
+        <option value="7:00AM">7:00AM</option>
+        <option value="8:00AM">8:00AM</option>
+        <option value="9:00AM">9:00AM</option>
+        <option value="10:00AM">10:00AM</option>
+        <option value="11:00AM">11:00AM</option>
+        <option value="12:00PM">12:00PM</option>
+        <option value="1:00PM">1:00PM</option>
+        <option value="2:00PM">2:00PM</option>
+        <option value="3:00PM">3:00PM</option>
+        <option value="4:00PM">4:00PM</option>
+        <option value="5:00PM">5:00PM</option>
+        <option value="6:00PM">6:00PM</option>
+        <option value="7:00PM">7:00PM</option>
+        <option value="8:00PM">8:00PM</option>
+        <option value="9:00PM">9:00PM</option>
+        <option value="10:00PM">10:00PM</option>
+        <option value="11:00PM">11:00PM</option>
+      </select>
+      </div>
+    </div>
+  </form>
+  </section>
 </body>
-
 </html>

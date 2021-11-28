@@ -1,0 +1,33 @@
+#new-event {
+  background-color: brown;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#organizer-info {
+  padding-top: 2em;
+
+  padding-bottom: 10em;
+  font-family: "Comfortaa";
+}
+
+.time-slot {
+  margin-right: 5em;
+}
+
+.event-field {
+  width: 100%;
+  background-color: transparent;
+  border: transparent;
+  font-family: "Comfortaa";
+  border-bottom: 2px solid;
+}
+
+.event-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  padding-right: 1em;
+}
