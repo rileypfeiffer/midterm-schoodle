@@ -46,7 +46,6 @@ const widgetsRoutes = require("./routes/widgets");
 const eventsRoutes = require("./routes/events");
 const organizersRoutes = require("./routes/organizers");
 const responsesRoutes = require("./routes/responses");
-const organizersRoutes = require("./routes/organizers")
 const new_event = require("./routes/events_page");
 
 
