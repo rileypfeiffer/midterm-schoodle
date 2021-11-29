@@ -7,8 +7,8 @@ module.exports = (db) => {
     console.log(query);
     db.query(query)
       .then(data => {
-        const events = data.rows;
-        res.json({ events });
+        const organizer = data.rows;
+        res.json({ organizer });
       })
       .catch(err => {
         res
