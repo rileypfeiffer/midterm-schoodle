@@ -8,5 +8,5 @@ CREATE TABLE events (
   location VARCHAR (255) NOT NULL,
   date DATE NOT NULL,
   description TEXT NOT NULL,
-  timeslot BOOLEAN NOT NULL,
+  timeslot BOOLEAN NOT NULL
 );
