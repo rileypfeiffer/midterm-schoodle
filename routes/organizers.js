@@ -1,10 +1,9 @@
 const express = require('express');
 const router  = express.Router();
-const { generateRandomString } = require('../helpers');
 
 module.exports = (db) => {
-  router.get("/new-event", (req, res) => {
-    let query = `SELECT * FROM events`;
+  router.get("/", (req, res) => {
+    let query = `SELECT * FROM users`;
     console.log(query);
     db.query(query)
       .then(data => {
@@ -17,10 +16,10 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  router.post("/new-event", (req, res) => {
-    const {url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
-    let query = `INSERT INTO events (url, location, date, description, timeslot1, timeslot2, timeslot3)`;
-    let values = [url, location, date, description, timeslot1, timeslot2, timeslot3];
+  router.post("/", (req, res) => {
+    const {name, email} = req.body;
+    let query = `INSERT INTO users (name, email)`;
+    let values = [name, email];
     db.query(query, values)
     .then(result => {
       return result.rows[0].id;
@@ -31,4 +30,3 @@ module.exports = (db) => {
   });
   return router;
 };
-
