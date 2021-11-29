@@ -9,5 +9,7 @@ CREATE TABLE responses (
   location VARCHAR (255) NOT NULL,
   date DATE NOT NULL,
   description TEXT NOT NULL,
-  accepted_timeslot BOOLEAN NOT NULL
+  timeslot_response1 BOOLEAN NOT NULL
+  timeslot_response2 BOOLEAN NOT NULL
+  timeslot_response3 BOOLEAN NOT NULL
 );

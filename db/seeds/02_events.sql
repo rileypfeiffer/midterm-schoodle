@@ -1,5 +1,5 @@
 -- Users table seeds here (Example)
 INSERT INTO events (organizer_id, url, location, date, description, timeslot)
-VALUES ('bdoe@gmail.com', 'John Doe'),
-('ssalmon@yahoo.com', 'Sally Salmon'),
-('ppipper@gmail.com', 'Peter Pipper');
+VALUES (1, 'www.event.com/first'),
+(1,'www.event.com/second', 'Sally Salmon'),
+(3,'www.event.com/third', 'Peter Pipper');
