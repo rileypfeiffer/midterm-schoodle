@@ -3,7 +3,7 @@ const router  = express.Router();
 const { generateRandomString } = require('../helpers');
 
 module.exports = (db) => {
-  router.get("/new-event", (req, res) => {
+  router.get("/", (req, res) => {
     let query = `SELECT * FROM events`;
     console.log(query);
     db.query(query)
@@ -17,7 +17,7 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-  router.post("/new-event", (req, res) => {
+  router.post("/", (req, res) => {
     const {url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
     let query = `INSERT INTO events (url, location, date, description, timeslot1, timeslot2, timeslot3)`;
     let values = [url, location, date, description, timeslot1, timeslot2, timeslot3];
