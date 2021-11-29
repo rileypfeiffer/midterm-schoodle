@@ -34,6 +34,7 @@
     </div>
   </nav>
   <section id="new-event">
+  <label for="create-event" id="create-event-label">Create Event: </label>
   <div id="organizer-info">
     <label for="name">Name: </label>
     <input type="text">
@@ -56,7 +57,7 @@
     <div class="event-info">
       <i class="far fa-clock icon"></i>
       <div id="time-slots" class="event-field">
-      <select name="time" class="time-slot">
+      <select name="time" class="time-slot" id="time-slot-1">
         <option value="" disabled selected class="time-placeholder">Time Slot 1</option>
         <option value="12:00AM">12:00AM</option>
         <option value="1:00AM">1:00AM</option>
@@ -138,6 +139,13 @@
         <option value="11:00PM">11:00PM</option>
       </select>
       </div>
+    </div>
+    <div class="bottom-content">
+      <div id="description">
+      <label for="description" id="description-label">Description:</label>
+      <textarea class="description-textarea" name="description" placeholder="Describe this event..."></textarea>
+      </div>
+    <button type="submit" class="create-event">Create Event</button>
     </div>
   </form>
   </section>

@@ -1,18 +1,29 @@
 #new-event {
   background-color: brown;
-  margin-left: 1em;
-  margin-right: 1em;
+  padding: 2em;
+}
+
+#create-event-label {
+  font-family: "Comfortaa";
+  font-size: 2em;
+  padding-top: 2em;
 }
 
 #organizer-info {
+  display: flex;
+  justify-content: space-between;
   padding-top: 2em;
-
   padding-bottom: 10em;
   font-family: "Comfortaa";
 }
 
 .time-slot {
   margin-right: 5em;
+  margin-bottom: 1em;
+}
+
+#time-slot-1 {
+  margin-left: 5em;
 }
 
 .event-field {
@@ -21,6 +32,7 @@
   border: transparent;
   font-family: "Comfortaa";
   border-bottom: 2px solid;
+  margin-bottom: 3em;
 }
 
 .event-info {
@@ -30,4 +42,32 @@
 
 .icon {
   padding-right: 1em;
+  font-size: 1.5em;
+}
+
+.bottom-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Comfortaa";
+}
+
+#description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 2em;
+}
+
+#description-label {
+  padding-bottom: 1em;
+}
+
+.description-textarea {
+  resize: none;
+  width: 200%;
+}
+
+.create-event {
+  padding: 1em;
 }
