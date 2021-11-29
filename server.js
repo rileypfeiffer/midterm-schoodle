@@ -45,6 +45,7 @@ const usersRoutes = require("./routes/users");
 const widgetsRoutes = require("./routes/widgets");
 const eventsRoutes = require("./routes/events");
 const organizersRoutes = require("./routes/organizers");
+const responsesRoutes = require("./routes/responses");
 
 
 // Mount all resource routes
@@ -53,6 +54,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 app.use("/api/events", eventsRoutes(db));
 app.use("/api/organizers", organizersRoutes(db));
+app.use("/api/responses", responsesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
