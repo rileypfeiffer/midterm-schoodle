@@ -10,5 +10,5 @@ CREATE TABLE events (
   description TEXT NOT NULL,
   timeslot1 TIME NOT NULL,
   timeslot2 TIME NOT NULL,
-  timeslot3 TIME NOT NULL,
+  timeslot3 TIME NOT NULL
 );
