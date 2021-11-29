@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>Schoodle: Event Creator</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -25,14 +25,7 @@
 </head>
 
 <body>
-  <!-- Global Nav Bar -->
-  <nav>
-    <span class="title">Schoodle</span>
-    <div class="right-side-header">
-    <label class="search-label" for="search">Find an event: </label>
-    <input class="search" type="text" placeholder="Search...">
-    </div>
-  </nav>
+  <%- include('partials/_header') %>
   <section id="new-event">
   <label for="create-event" id="create-event-label">Create Event: </label>
   <div id="organizer-info">
