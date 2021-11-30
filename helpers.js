@@ -11,8 +11,8 @@ db.connect()
 })
 
 const pool = new Pool({
-  user: 'vagrant',
-  password: '123',
+  user: 'labber',
+  password: 'labber',
   host: 'localhost',
   database: 'midterm'
 });
@@ -41,4 +41,24 @@ const getOrganizer = (name, email) => {
     });
   };
 
-module.exports = { generateRandomString, getOrganizer };
+  const getEventInfo = (title, location, date, description, timeslot1, timeslot2, timeslot3) => {
+    return pool
+      .query (`
+      INSERT INTO events (
+        title,
+        location,
+        date,
+        description,
+        timeslot1,
+        timeslot2,
+        timeslot3
+      )
+      VALUES ($1, $2, $3, $4, $5, $6, $7)
+      RETURNING *;`, [title, location, date, description, timeslot1, timeslot2, timeslot3])
+      .then((result) => result.rows)
+      .catch((err) => {
+        console.log(err.message);
+      });
+    };
+
+module.exports = { generateRandomString, getOrganizer, getEventInfo };
