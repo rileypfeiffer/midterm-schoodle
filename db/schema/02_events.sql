@@ -7,7 +7,7 @@ CREATE TABLE events (
   title VARCHAR(255),
   url VARCHAR(255),
   location VARCHAR(255) NOT NULL,
-  date TEXT NOT NULL,
+  date DATE NOT NULL,
   description TEXT NOT NULL,
   timeslot1 TIME NOT NULL,
   timeslot2 TIME NOT NULL,

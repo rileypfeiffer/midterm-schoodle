@@ -41,30 +41,29 @@ const getOrganizer = (name, email) => {
     });
 };
 
-const getEventInfo = (title, location, date, description, timeslot1, timeslot2, timeslot3) => {
+// const getEventInfo = (title, location, date, description, timeslot1, timeslot2, timeslot3) => {
 
-  return pool
-    .query(`
-      INSERT INTO events (
-        title,
-        location,
-        date,
-        description,
-        timeslot1,
-        timeslot2,
-        timeslot3
-      )
-      VALUES ($1, $2, $3, $4, $5, $6, $7)
-      RETURNING *;`, [title, location, date, description, timeslot1, timeslot2, timeslot3])
-    .then((result) => {
+//   return pool
+//     .query(`
+//       INSERT INTO events (
+//         title,
+//         location,
+//         date,
+//         description,
+//         timeslot1,
+//         timeslot2,
+//         timeslot3
+//       )
+//       VALUES ($1, $2, $3, $4, $5, $6, $7)
+//       RETURNING *;`, [title, location, date, description, timeslot1, timeslot2, timeslot3])
+//     .then(result => {
 
-      result.rows
-    })
-    .catch((err) => {
-      console.log(err.message);
-    });
-
-};
+//       result.rows
+//     })
+//     .catch((err) => {
+//       console.log(err.message);
+//     });
+// };
 
 // const url = generateRandomString()
 // let updateQuery = `UPDATE events set url = $2 WHERE id = $1 `
@@ -72,4 +71,4 @@ const getEventInfo = (title, location, date, description, timeslot1, timeslot2, 
 // const updateArray = [result.rows[0].id, url]
 // db.query(updateQuery, updateArray)
 
-module.exports = { generateRandomString, getOrganizer, getEventInfo };
+module.exports = { generateRandomString, getOrganizer };
