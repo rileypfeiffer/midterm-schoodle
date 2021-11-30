@@ -47,7 +47,7 @@ const eventsRoutes = require("./routes/events");
 const organizersRoutes = require("./routes/organizers");
 const responsesRoutes = require("./routes/responses");
 const new_event = require("./routes/events_page");
-
+const invite = require("./routes/invitation_page");
 
 
 // Mount all resource routes
@@ -58,6 +58,7 @@ app.use("/api/events", eventsRoutes(db));
 app.use("/api/organizers", organizersRoutes(db));
 app.use("/api/responses", responsesRoutes(db));
 app.use("/new-event", new_event(db));
+app.use("/invite", invite(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -68,6 +69,13 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
+});
+
+app.post("/new-events", (req, res) => {
+  console.log(req.body);  // Log the POST request body to the consoleclea
+  res.redirect(`/new-event`);
+  res.send("Ok");         // Respond with 'Ok' (we will replace this)
 });
