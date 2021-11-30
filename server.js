@@ -89,10 +89,14 @@ app.listen(PORT, () => {
 app.post("/organizer", (req, res) => {
   const orgName = req.body.name;
   const orgEmail = req.body.email;
-  getOrganizer(orgName, orgEmail);
-  exports.getOrganizer = getOrganizer;
-  req.session.org_id = orgEmail;
-  res.redirect(`/new-event`);
+  getOrganizer(orgName, orgEmail)
+  .then (result => {
+    console.log('>>>>>>>>>>>>>>', result)
+    exports.getOrganizer = getOrganizer;
+    req.session.org_id = orgEmail;
+    req.session.user_id = result.id
+    res.redirect(`/new-event`);
+  })
 });
 
 // Create new event

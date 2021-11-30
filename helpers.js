@@ -35,7 +35,7 @@ const getOrganizer = (name, email) => {
     )
     VALUES ($1, $2)
     RETURNING *;`, [name, email])
-    .then((result) => result.rows)
+    .then(result => result.rows[0])
     .catch((err) => {
       console.log(err.message);
     });
