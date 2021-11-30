@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const { getEventInfo } = require('../helpers');
+// const { getEventInfo } = require('../helpers');
 const { generateRandomString } = require('../helpers')
 
 module.exports = (db) => {
