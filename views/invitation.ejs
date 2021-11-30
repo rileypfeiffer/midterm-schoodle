@@ -9,12 +9,14 @@
   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/invitation.css" type="text/css" />
 
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -30,17 +32,52 @@
   <h2>Example Event Title</h2>
   <h4>Created By: Example Organizer</h4>
   </div>
+  <section id="invitation-content">
   <div id="left-column-content">
+    <div class="event-info">
     <i class="far fa-compass icon"></i>
-    <!-- import location -->
+    <!-- pull location -->
+    <p>111 Example Street, Brampton ON</p>
+    </div>
+    <div class="event-info">
     <i class="fas fa-calendar-week icon"></i>
-    <!-- import date -->
-    <i class="far fa-clock icon"></i>
-    <!-- import time slots with checkboxes to select -->
+    <!-- pull date -->
+    <p>September 21, 2021</p>
+    </div>
+    <div id="timeslots">
+      <div class="event-info">
+      <i class="far fa-clock icon"></i>
+      <p>Timeslots</p>
+      </div>
+    <!-- pull time slots with checkboxes to select -->
+    <div id="times">
+      <div class="time">
+      <input type="checkbox" id="time-slot-1" name="time-slot-1">
+      <label class="time-label" for="time-slot-1">1:00PM</label>
+      </div>
+      <div class="time">
+      <input type="checkbox" id="time-slot-2" name="time-slot-2">
+      <label class="time-label" for="time-slot-2">3:00PM</label>
+      </div>
+      <div class="time">
+      <input type="checkbox" id="time-slot-3" name="time-slot-3">
+      <label class="time-label" for="time-slot-3">11:00PM</label>
+      </div>
+    </div>
+    </div>
   </div>
-  <div id="pic-desc">
-    <!-- import description -->
-    <!-- import respondees -->
+  <div id="description-respondees">
+    <!-- pull description -->
+    <label for="description"><b>Description:</b></label>
+    <p>John Doe's 45th birthday party! Don't forget to bring your own beer!</p>
+    <!-- pull respondees -->
+    <label for="respondee-list"><b>Respondees:</b></label>
+    <ul>
+      <li>Sally Salmon (ssalmon@yahoo.com): <i class="fas fa-check attending"></i></li>
+      <li>John Doe (bdoe@gmail.com): <i class="fas fa-check attending"></i></li>
+      <li>Denis Rodman (drodman@yahoo.com): <i class="fas fa-times not-attending"></i></li>
+    </ul>
+  </section>
     <div id="decline-confirm">
       <button type="submit" class="decline-confirm">Decline</button>
       <button type="submit" class="decline-confirm">Confirm</button>

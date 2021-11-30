@@ -10,7 +10,7 @@ const pool = new Pool({
 $(document).ready(function() {
   const createInvitation = function(url) {
     const values = [url]
-    const queryString = `SELECT * FROM events WHERE url = $1`
+    const queryString = `SELECT * FROM events WHERE url = $1;`
     return pool
       .query(queryString, values)
       .then((result) => {
