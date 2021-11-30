@@ -18,225 +18,199 @@
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Disable Viewport Zooming-->
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 </head>
 
 <body>
-<%- include('partials/_header') %>
-<section id="new-event">
-<h2 id="create-event-label">Create Event: </h2>
-<form id="event-form">
-  <div class="event-info">
-  <i class="fas fa-star icon"></i>
-  <input type="text" class="event-field" placeholder="Event Title">
-  </div>
-  <div class="event-info">
-  <i class="far fa-compass icon"></i>
-  <input type="text" class="event-field" placeholder="Location">
-  </div>
-  <div class="event-info">
-  <i class="fas fa-calendar-week icon"></i>
-  <input type="text" class="event-field" placeholder="Date">
-  </div>
-  <div class="event-info">
-    <i class="far fa-clock icon"></i>
-    <div id="time-slots" class="event-field">
-    <select name="time" class="time-slot" id="time-slot-1">
-      <option value="" disabled selected class="time-placeholder">Time Slot 1</option>
-      <option value="12:00AM">12:00AM</option>
-      <option value="12:30AM">12:30AM</option>
-      <option value="1:00AM">1:00AM</option>
-      <option value="1:30AM">1:30AM</option>
-      <option value="2:00AM">2:00AM</option>
-      <option value="2:30AM">2:30AM</option>
-      <option value="3:00AM">3:00AM</option>
-      <option value="3:30AM">3:30AM</option>
-      <option value="4:00AM">4:00AM</option>
-      <option value="4:30AM">4:30AM</option>
-      <option value="5:00AM">5:00AM</option>
-      <option value="5:30AM">5:30AM</option>
-      <option value="6:00AM">6:00AM</option>
-      <option value="6:30AM">6:30AM</option>
-      <option value="7:00AM">7:00AM</option>
-      <option value="7:30AM">7:30AM</option>
-      <option value="8:00AM">8:00AM</option>
-      <option value="8:30AM">8:30AM</option>
-      <option value="9:00AM">9:00AM</option>
-      <option value="9:30AM">9:30AM</option>
-      <option value="10:00AM">10:00AM</option>
-      <option value="10:30AM">10:30AM</option>
-      <option value="11:00AM">11:00AM</option>
-      <option value="11:30AM">11:30AM</option>
-      <option value="12:00PM">12:00PM</option>
-      <option value="12:30PM">12:30PM</option>
-      <option value="1:00PM">1:00PM</option>
-      <option value="1:30PM">1:30PM</option>
-      <option value="2:00PM">2:00PM</option>
-      <option value="2:30PM">2:30PM</option>
-      <option value="3:00PM">3:00PM</option>
-      <option value="3:30PM">3:30PM</option>
-      <option value="4:00PM">4:00PM</option>
-      <option value="4:30PM">4:30PM</option>
-      <option value="5:00PM">5:00PM</option>
-      <option value="5:30PM">5:30PM</option>
-      <option value="6:00PM">6:00PM</option>
-      <option value="6:30PM">6:30PM</option>
-      <option value="7:00PM">7:00PM</option>
-      <option value="7:30PM">7:30PM</option>
-      <option value="8:00PM">8:00PM</option>
-      <option value="8:30PM">8:30PM</option>
-      <option value="9:00PM">9:00PM</option>
-      <option value="9:30PM">9:30PM</option>
-      <option value="10:00PM">10:00PM</option>
-      <option value="10:30PM">10:30PM</option>
-      <option value="11:00PM">11:00PM</option>
-      <option value="11:30PM">11:30PM</option>
-    </select>
-    <select name="time" class="time-slot">
-      <option value="" disabled selected class="time-placeholder">Time Slot 2</option>
-      <option value="12:00AM">12:00AM</option>
-      <option value="12:30AM">12:30AM</option>
-      <option value="1:00AM">1:00AM</option>
-      <option value="1:30AM">1:30AM</option>
-      <option value="2:00AM">2:00AM</option>
-      <option value="2:30AM">2:30AM</option>
-      <option value="3:00AM">3:00AM</option>
-      <option value="3:30AM">3:30AM</option>
-      <option value="4:00AM">4:00AM</option>
-      <option value="4:30AM">4:30AM</option>
-      <option value="5:00AM">5:00AM</option>
-      <option value="5:30AM">5:30AM</option>
-      <option value="6:00AM">6:00AM</option>
-      <option value="6:30AM">6:30AM</option>
-      <option value="7:00AM">7:00AM</option>
-      <option value="7:30AM">7:30AM</option>
-      <option value="8:00AM">8:00AM</option>
-      <option value="8:30AM">8:30AM</option>
-      <option value="9:00AM">9:00AM</option>
-      <option value="9:30AM">9:30AM</option>
-      <option value="10:00AM">10:00AM</option>
-      <option value="10:30AM">10:30AM</option>
-      <option value="11:00AM">11:00AM</option>
-      <option value="11:30AM">11:30AM</option>
-      <option value="12:00PM">12:00PM</option>
-      <option value="12:30PM">12:30PM</option>
-      <option value="1:00PM">1:00PM</option>
-      <option value="1:30PM">1:30PM</option>
-      <option value="2:00PM">2:00PM</option>
-      <option value="2:30PM">2:30PM</option>
-      <option value="3:00PM">3:00PM</option>
-      <option value="3:30PM">3:30PM</option>
-      <option value="4:00PM">4:00PM</option>
-      <option value="4:30PM">4:30PM</option>
-      <option value="5:00PM">5:00PM</option>
-      <option value="5:30PM">5:30PM</option>
-      <option value="6:00PM">6:00PM</option>
-      <option value="6:30PM">6:30PM</option>
-      <option value="7:00PM">7:00PM</option>
-      <option value="7:30PM">7:30PM</option>
-      <option value="8:00PM">8:00PM</option>
-      <option value="8:30PM">8:30PM</option>
-      <option value="9:00PM">9:00PM</option>
-      <option value="9:30PM">9:30PM</option>
-      <option value="10:00PM">10:00PM</option>
-      <option value="10:30PM">10:30PM</option>
-      <option value="11:00PM">11:00PM</option>
-      <option value="11:30PM">11:30PM</option>
-    </select>
-    <select name="time" class="time-slot">
-      <option value="" disabled selected class="time-placeholder">Time Slot 3</option>
-      <option value="12:00AM">12:00AM</option>
-      <option value="12:30AM">12:30AM</option>
-      <option value="1:00AM">1:00AM</option>
-      <option value="1:30AM">1:30AM</option>
-      <option value="2:00AM">2:00AM</option>
-      <option value="2:30AM">2:30AM</option>
-      <option value="3:00AM">3:00AM</option>
-      <option value="3:30AM">3:30AM</option>
-      <option value="4:00AM">4:00AM</option>
-      <option value="4:30AM">4:30AM</option>
-      <option value="5:00AM">5:00AM</option>
-      <option value="5:30AM">5:30AM</option>
-      <option value="6:00AM">6:00AM</option>
-      <option value="6:30AM">6:30AM</option>
-      <option value="7:00AM">7:00AM</option>
-      <option value="7:30AM">7:30AM</option>
-      <option value="8:00AM">8:00AM</option>
-      <option value="8:30AM">8:30AM</option>
-      <option value="9:00AM">9:00AM</option>
-      <option value="9:30AM">9:30AM</option>
-      <option value="10:00AM">10:00AM</option>
-      <option value="10:30AM">10:30AM</option>
-      <option value="11:00AM">11:00AM</option>
-      <option value="11:30AM">11:30AM</option>
-      <option value="12:00PM">12:00PM</option>
-      <option value="12:30PM">12:30PM</option>
-      <option value="1:00PM">1:00PM</option>
-      <option value="1:30PM">1:30PM</option>
-      <option value="2:00PM">2:00PM</option>
-      <option value="2:30PM">2:30PM</option>
-      <option value="3:00PM">3:00PM</option>
-      <option value="3:30PM">3:30PM</option>
-      <option value="4:00PM">4:00PM</option>
-      <option value="4:30PM">4:30PM</option>
-      <option value="5:00PM">5:00PM</option>
-      <option value="5:30PM">5:30PM</option>
-      <option value="6:00PM">6:00PM</option>
-      <option value="6:30PM">6:30PM</option>
-      <option value="7:00PM">7:00PM</option>
-      <option value="7:30PM">7:30PM</option>
-      <option value="8:00PM">8:00PM</option>
-      <option value="8:30PM">8:30PM</option>
-      <option value="9:00PM">9:00PM</option>
-      <option value="9:30PM">9:30PM</option>
-      <option value="10:00PM">10:00PM</option>
-      <option value="10:30PM">10:30PM</option>
-      <option value="11:00PM">11:00PM</option>
-      <option value="11:30PM">11:30PM</option>
-    </select>
-    </div>
-  </div>
-  <div class="bottom-content">
-    <div id="description">
-    <label for="description" id="description-label">Description:</label>
-    <textarea class="description-textarea" name="description" placeholder="Add a note to describe the event"></textarea>
-    </div>
-  <button type="submit" id="create-event-button">Create Event</button>
-  </div>
-</form>
-</section>
+  <%- include('partials/_header') %>
+    <section id="new-event">
+      <h2 id="create-event-label">Create Event: </h2>
+      <form id="event-form" method="post" action="/api/events">
+        <div class="event-info">
+          <i class="fas fa-star icon"></i>
+          <input type="text" class="event-field" placeholder="Event Title" name="title">
+        </div>
+        <div class="event-info">
+          <i class="far fa-compass icon"></i>
+          <input type="text" class="event-field" placeholder="Location" name="location">
+        </div>
+        <div class="event-info">
+          <i class="fas fa-calendar-week icon"></i>
+          <input type="text" class="event-field" placeholder="Date" name="date">
+        </div>
+        <div class="event-info">
+          <i class="far fa-clock icon"></i>
+          <div id="time-slots" class="event-field">
+            <select name="timeslot1" class="time-slot" id="time-slot-1">
+              <option value="" disabled selected class="time-placeholder">Time Slot 1</option>
+              <option value="12:00AM">12:00AM</option>
+              <option value="12:30AM">12:30AM</option>
+              <option value="1:00AM">1:00AM</option>
+              <option value="1:30AM">1:30AM</option>
+              <option value="2:00AM">2:00AM</option>
+              <option value="2:30AM">2:30AM</option>
+              <option value="3:00AM">3:00AM</option>
+              <option value="3:30AM">3:30AM</option>
+              <option value="4:00AM">4:00AM</option>
+              <option value="4:30AM">4:30AM</option>
+              <option value="5:00AM">5:00AM</option>
+              <option value="5:30AM">5:30AM</option>
+              <option value="6:00AM">6:00AM</option>
+              <option value="6:30AM">6:30AM</option>
+              <option value="7:00AM">7:00AM</option>
+              <option value="7:30AM">7:30AM</option>
+              <option value="8:00AM">8:00AM</option>
+              <option value="8:30AM">8:30AM</option>
+              <option value="9:00AM">9:00AM</option>
+              <option value="9:30AM">9:30AM</option>
+              <option value="10:00AM">10:00AM</option>
+              <option value="10:30AM">10:30AM</option>
+              <option value="11:00AM">11:00AM</option>
+              <option value="11:30AM">11:30AM</option>
+              <option value="12:00PM">12:00PM</option>
+              <option value="12:30PM">12:30PM</option>
+              <option value="1:00PM">1:00PM</option>
+              <option value="1:30PM">1:30PM</option>
+              <option value="2:00PM">2:00PM</option>
+              <option value="2:30PM">2:30PM</option>
+              <option value="3:00PM">3:00PM</option>
+              <option value="3:30PM">3:30PM</option>
+              <option value="4:00PM">4:00PM</option>
+              <option value="4:30PM">4:30PM</option>
+              <option value="5:00PM">5:00PM</option>
+              <option value="5:30PM">5:30PM</option>
+              <option value="6:00PM">6:00PM</option>
+              <option value="6:30PM">6:30PM</option>
+              <option value="7:00PM">7:00PM</option>
+              <option value="7:30PM">7:30PM</option>
+              <option value="8:00PM">8:00PM</option>
+              <option value="8:30PM">8:30PM</option>
+              <option value="9:00PM">9:00PM</option>
+              <option value="9:30PM">9:30PM</option>
+              <option value="10:00PM">10:00PM</option>
+              <option value="10:30PM">10:30PM</option>
+              <option value="11:00PM">11:00PM</option>
+              <option value="11:30PM">11:30PM</option>
+            </select>
+            <select name="timeslot2" class="time-slot">
+              <option value="" disabled selected class="time-placeholder">Time Slot 2</option>
+              <option value="12:00AM">12:00AM</option>
+              <option value="12:30AM">12:30AM</option>
+              <option value="1:00AM">1:00AM</option>
+              <option value="1:30AM">1:30AM</option>
+              <option value="2:00AM">2:00AM</option>
+              <option value="2:30AM">2:30AM</option>
+              <option value="3:00AM">3:00AM</option>
+              <option value="3:30AM">3:30AM</option>
+              <option value="4:00AM">4:00AM</option>
+              <option value="4:30AM">4:30AM</option>
+              <option value="5:00AM">5:00AM</option>
+              <option value="5:30AM">5:30AM</option>
+              <option value="6:00AM">6:00AM</option>
+              <option value="6:30AM">6:30AM</option>
+              <option value="7:00AM">7:00AM</option>
+              <option value="7:30AM">7:30AM</option>
+              <option value="8:00AM">8:00AM</option>
+              <option value="8:30AM">8:30AM</option>
+              <option value="9:00AM">9:00AM</option>
+              <option value="9:30AM">9:30AM</option>
+              <option value="10:00AM">10:00AM</option>
+              <option value="10:30AM">10:30AM</option>
+              <option value="11:00AM">11:00AM</option>
+              <option value="11:30AM">11:30AM</option>
+              <option value="12:00PM">12:00PM</option>
+              <option value="12:30PM">12:30PM</option>
+              <option value="1:00PM">1:00PM</option>
+              <option value="1:30PM">1:30PM</option>
+              <option value="2:00PM">2:00PM</option>
+              <option value="2:30PM">2:30PM</option>
+              <option value="3:00PM">3:00PM</option>
+              <option value="3:30PM">3:30PM</option>
+              <option value="4:00PM">4:00PM</option>
+              <option value="4:30PM">4:30PM</option>
+              <option value="5:00PM">5:00PM</option>
+              <option value="5:30PM">5:30PM</option>
+              <option value="6:00PM">6:00PM</option>
+              <option value="6:30PM">6:30PM</option>
+              <option value="7:00PM">7:00PM</option>
+              <option value="7:30PM">7:30PM</option>
+              <option value="8:00PM">8:00PM</option>
+              <option value="8:30PM">8:30PM</option>
+              <option value="9:00PM">9:00PM</option>
+              <option value="9:30PM">9:30PM</option>
+              <option value="10:00PM">10:00PM</option>
+              <option value="10:30PM">10:30PM</option>
+              <option value="11:00PM">11:00PM</option>
+              <option value="11:30PM">11:30PM</option>
+            </select>
+            <select name="timeslot3" class="time-slot">
+              <option value="" disabled selected class="time-placeholder">Time Slot 3</option>
+              <option value="12:00AM">12:00AM</option>
+              <option value="12:30AM">12:30AM</option>
+              <option value="1:00AM">1:00AM</option>
+              <option value="1:30AM">1:30AM</option>
+              <option value="2:00AM">2:00AM</option>
+              <option value="2:30AM">2:30AM</option>
+              <option value="3:00AM">3:00AM</option>
+              <option value="3:30AM">3:30AM</option>
+              <option value="4:00AM">4:00AM</option>
+              <option value="4:30AM">4:30AM</option>
+              <option value="5:00AM">5:00AM</option>
+              <option value="5:30AM">5:30AM</option>
+              <option value="6:00AM">6:00AM</option>
+              <option value="6:30AM">6:30AM</option>
+              <option value="7:00AM">7:00AM</option>
+              <option value="7:30AM">7:30AM</option>
+              <option value="8:00AM">8:00AM</option>
+              <option value="8:30AM">8:30AM</option>
+              <option value="9:00AM">9:00AM</option>
+              <option value="9:30AM">9:30AM</option>
+              <option value="10:00AM">10:00AM</option>
+              <option value="10:30AM">10:30AM</option>
+              <option value="11:00AM">11:00AM</option>
+              <option value="11:30AM">11:30AM</option>
+              <option value="12:00PM">12:00PM</option>
+              <option value="12:30PM">12:30PM</option>
+              <option value="1:00PM">1:00PM</option>
+              <option value="1:30PM">1:30PM</option>
+              <option value="2:00PM">2:00PM</option>
+              <option value="2:30PM">2:30PM</option>
+              <option value="3:00PM">3:00PM</option>
+              <option value="3:30PM">3:30PM</option>
+              <option value="4:00PM">4:00PM</option>
+              <option value="4:30PM">4:30PM</option>
+              <option value="5:00PM">5:00PM</option>
+              <option value="5:30PM">5:30PM</option>
+              <option value="6:00PM">6:00PM</option>
+              <option value="6:30PM">6:30PM</option>
+              <option value="7:00PM">7:00PM</option>
+              <option value="7:30PM">7:30PM</option>
+              <option value="8:00PM">8:00PM</option>
+              <option value="8:30PM">8:30PM</option>
+              <option value="9:00PM">9:00PM</option>
+              <option value="9:30PM">9:30PM</option>
+              <option value="10:00PM">10:00PM</option>
+              <option value="10:30PM">10:30PM</option>
+              <option value="11:00PM">11:00PM</option>
+              <option value="11:30PM">11:30PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="bottom-content">
+          <div id="description">
+            <label for="description" id="description-label">Description:</label>
+            <textarea class="description-textarea" name="description"
+              placeholder="Add a note to describe the event"></textarea>
+          </div>
+          <button type="submit" id="create-event-button">Create Event</button>
+        </div>
+      </form>
+    </section>
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

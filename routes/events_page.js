@@ -7,5 +7,13 @@ module.exports = (db) => {
     res.render("new-event");
   });
 
+  router.post("/", (req, res) => {
+    console.log(req.body);
+    res.redirect("/");
+  });
+
   return router;
 };
+
+
+

@@ -76,6 +76,9 @@ app.listen(PORT, () => {
 
 app.post("/new-events", (req, res) => {
   console.log(req.body);  // Log the POST request body to the consoleclea
+  const orgName = req.body.name;
+  const orgEmail = req.body.email;
+
   res.redirect(`/new-event`);
   res.send("Ok");         // Respond with 'Ok' (we will replace this)
 });
