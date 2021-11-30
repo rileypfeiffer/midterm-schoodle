@@ -9,21 +9,22 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    console.log(req.body);
-    const title = req.body.title;
-    const location = req.body.location;
-    const date = req.body.date;
-    const description = req.body.description;
-    const timeslot1 = req.body.timeslot1;
-    const timeslot2 = req.body.timeslot2;
-    const timeslot3 = req.body.timeslot3;
-    getEventInfo(title, location, date, description, timeslot1, timeslot2, timeslot3);
-    exports.getEventInfo = getEventInfo;
+
+
     res.redirect("/new-event");
   });
 
   return router;
 };
+
+// const title = req.body.title;
+// const location = req.body.location;
+// const date = req.body.date;
+// const description = req.body.description;
+// const timeslot1 = req.body.timeslot1;
+// const timeslot2 = req.body.timeslot2;
+// const timeslot3 = req.body.timeslot3;
+// getEventInfo(title, location, date, description, timeslot1, timeslot2, timeslot3);
 
 
 

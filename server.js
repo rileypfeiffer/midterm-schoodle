@@ -11,6 +11,7 @@ const morgan = require("morgan");
 const cookieSession = require('cookie-session')
 const { getOrganizer } = require('./helpers');
 
+
 // PG database client/connection setup
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
@@ -30,6 +31,11 @@ app.use(morgan("dev"));
 
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(cookieSession({
+  name: 'session',
+  keys: ["key1", "key2"],
+
+}));
 
 app.use(
   "/styles",
@@ -77,11 +83,11 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 
-app.post("/new-events", (req, res) => {
+app.post("/organizer", (req, res) => {
   const orgName = req.body.name;
   const orgEmail = req.body.email;
   getOrganizer(orgName, orgEmail);
   exports.getOrganizer = getOrganizer;
-  req.session.user_id = orgEmail;
+  req.session.org_id = orgEmail;
   res.redirect(`/new-event`);
 });
