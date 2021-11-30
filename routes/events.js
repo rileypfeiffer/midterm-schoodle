@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const { generateRandomString } = require('../helpers');
+const { generateRandomString, getOrganizer } = require('../helpers');
 
 module.exports = (db) => {
   router.get("/", (req, res) => {

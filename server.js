@@ -1,12 +1,15 @@
 // load .env data into process.env
 require("dotenv").config();
 
+
 // Web server config
 const PORT = process.env.PORT || 8080;
 const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+const cookieSession = require('cookie-session')
+const { getOrganizer } = require('./helpers');
 
 // PG database client/connection setup
 const { Pool } = require("pg");
@@ -75,10 +78,10 @@ app.listen(PORT, () => {
 });
 
 app.post("/new-events", (req, res) => {
-  console.log(req.body);  // Log the POST request body to the consoleclea
   const orgName = req.body.name;
   const orgEmail = req.body.email;
-
+  getOrganizer(orgName, orgEmail);
+  exports.getOrganizer = getOrganizer;
+  req.session.user_id = orgEmail;
   res.redirect(`/new-event`);
-  res.send("Ok");         // Respond with 'Ok' (we will replace this)
 });
