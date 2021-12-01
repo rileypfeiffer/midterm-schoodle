@@ -16,7 +16,10 @@ module.exports = (db) => {
   // });
 
   router.post("/", (req, res) => {
+
+    let eventid;
     const {title, url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
+    console.log('>>>>>>>', req.body);
     let userID = req.session.user_id
     let query = `INSERT INTO events ( organizer_id, title, url, location, date, description, timeslot1, timeslot2, timeslot3) values ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning *`;
     console.log(req.body)
@@ -27,14 +30,22 @@ module.exports = (db) => {
       const url = generateRandomString()
       let updateQuery = `UPDATE events set url = $2 WHERE id = $1 `
       const updateArray = [result.rows[0].id, url]
+      eventId = result.rows[0].id;
       db.query(updateQuery, updateArray)
       .then(result2 => {
-       res.redirect('/')
+          let stringQuery = `SELECT url FROM events WHERE id = $1`;
+          db.query(stringQuery,[eventId])
+          .then((result3)=>{
+            // console.log("test",result3.rows[0].url);
+            res.json({data: result3.rows[0].url});
+          })
+
       })
     })
     .catch(err => {
       console.log(err);
     })
+
   });
 
 
