@@ -9,21 +9,19 @@ const pool = new Pool({
 });
 
 
-$(document).ready(function() {
-  const createInvitation = function(url) {
-    const values = [req.body[0].url]
-    const queryString = `SELECT * FROM events WHERE url = $1;`
-    return pool
-      .query(queryString, values)
-      .then((result) => {
-        return result.rows[0].url;
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-});
+const createInvitation = function(url) {
+  const values = [url]
+  const queryString = `SELECT * FROM events WHERE url = $1;`
+  return pool
+    .query(queryString, values)
+    .then((result) => {
+      console.log(result.rows[0]);
+      return result.rows[0];
+    })
+    .catch((result) => {
+      console.log(err.message);
+    });
+};
 
-
-
+createInvitation(url);
 exports.createInvitation = createInvitation;
