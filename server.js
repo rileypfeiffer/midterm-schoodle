@@ -59,6 +59,7 @@ const responsesRoutes = require("./routes/responses");
 const new_event = require("./routes/events_page");
 const invite = require("./routes/invitation_page");
 const error = require("./routes/error");
+const random_url = require("./routes/random_url");
 
 
 // Mount all resource routes
@@ -71,6 +72,7 @@ app.use("/api/responses", responsesRoutes(db));
 app.use("/new-event", new_event(db));
 app.use("/invite", invite(db));
 app.use("/error", error(db));
+app.use("/invite/random_url", random_url(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page

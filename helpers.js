@@ -55,6 +55,7 @@ const fetchAPI = function (table) {
 }
 
 
+
 // const getEventInfo = (title, location, date, description, timeslot1, timeslot2, timeslot3) => {
 
 //   return pool
