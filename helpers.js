@@ -1,4 +1,5 @@
 // PG database client/connection setup
+const request = require('request');
 const { Pool } = require("pg");
 const dbParams = require("./lib/db.js");
 const db = new Pool(dbParams);
@@ -41,6 +42,19 @@ const getOrganizer = (name, email) => {
     });
 };
 
+const fetchAPI = function(table) {
+  request(`http://localhost:8080/api/${table}`, (error, response, body) => { // Request function takes in URL and its contents
+    if (error) { // If error occurs, calls error
+      callback(error, null);
+    }
+
+    // Converts body information into an object and stores in data
+    const data = JSON.parse(body);
+    //console.log(data);
+    return data;
+  });
+};
+
 // const getEventInfo = (title, location, date, description, timeslot1, timeslot2, timeslot3) => {
 
 //   return pool
@@ -71,4 +85,4 @@ const getOrganizer = (name, email) => {
 // const updateArray = [result.rows[0].id, url]
 // db.query(updateQuery, updateArray)
 
-module.exports = { generateRandomString, getOrganizer };
+module.exports = { generateRandomString, getOrganizer, fetchAPI };
