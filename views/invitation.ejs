@@ -29,47 +29,43 @@
 <%- include('partials/_header') %>
 <section id="event">
   <div id="event-title-organizer">
-  <h2>Example Event Title</h2>
+  <h2><%= data.title ></h2>
   <h4>Created By: Example Organizer</h4>
   </div>
   <section id="invitation-content">
   <div id="left-column-content">
     <div class="event-info">
     <i class="far fa-compass icon"></i>
-    <!-- location -->
-    <p>111 Example Street, Brampton ON</p>
+    <p><%= data.location ></p>
     </div>
     <div class="event-info">
     <i class="fas fa-calendar-week icon"></i>
-    <!-- date -->
-    <p>September 21, 2021</p>
+    <p><%= data.date ></p>
     </div>
     <div id="timeslots">
       <div class="event-info">
       <i class="far fa-clock icon"></i>
       <p>Timeslots</p>
       </div>
-    <!-- time slots -->
     <div id="times">
       <div class="time">
       <input type="checkbox" id="time-slot-1" name="time-slot-1">
-      <label class="time-label" for="time-slot-1">1:00PM</label>
+      <label class="time-label" for="time-slot-1"><%= data.timeslot1 ></label>
       </div>
       <div class="time">
       <input type="checkbox" id="time-slot-2" name="time-slot-2">
-      <label class="time-label" for="time-slot-2">3:00PM</label>
+      <label class="time-label" for="time-slot-2"><%= data.timeslot2 ></label>
       </div>
       <div class="time">
       <input type="checkbox" id="time-slot-3" name="time-slot-3">
-      <label class="time-label" for="time-slot-3">11:00PM</label>
+      <label class="time-label" for="time-slot-3"><%= data.timeslot3 ></label>
       </div>
     </div>
     </div>
   </div>
   <div id="description-respondees">
-    <!-- description -->
     <label for="description"><b>Description:</b></label>
-    <p>John Doe's 45th birthday party! Don't forget to bring your own beer!</p>
+    <p><%= data.description ></p>
     <!-- respondees -->
     <label for="respondee-list"><b>Respondees:</b></label>
     <ul>
@@ -89,5 +85,6 @@
       </form>
     </div>
   </div>
+</section>
 </body>
 </html>

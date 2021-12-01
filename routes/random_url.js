@@ -12,7 +12,6 @@ module.exports = (db) => {
       for (let data of apiData.events) {
         console.log("THISONE >>>>>>>>>", data.date);
         if (data.url === urlLookup) {
-
           //****** use data.____ for variables */
 
 
@@ -35,3 +34,20 @@ module.exports = (db) => {
   });
   return router;
 };
+
+
+app.get("/invite/:url", (req, res) => {
+  db.query(`SELECT * FROM users;`)
+      .then(data => {
+        const users = data.rows;
+        res.json({ users });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      })
+
+    const templateVars = { user: users[req.session.user_id], shortURL: req.params.shortURL, longURL: urlDatabase[req.params.shortURL]["longURL"], userURL: urlDatabase[req.params.shortURL] };
+    res.render("urls_show", templateVars);
+});

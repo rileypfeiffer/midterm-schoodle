@@ -12,7 +12,7 @@ $(document).ready(function(){
             method: "POST",
             success: function(result){
                console.log(result)
-               $('#url-slidedown').text(`URL CREATED, localhost:8080/${result.data}`);
+               $('#url-slidedown').text(`Event URL Created: localhost:8080/invite/${result.data}`);
                $('#url-slidedown').css({"visibility":"visible","display":"block"});
             },
             error: function(error){

@@ -9,21 +9,4 @@ const pool = new Pool({
 });
 
 
-const createInvitation = function(url) {
-  const values = [url]
-  const queryString = `SELECT * FROM events WHERE url = $1;`
-  return pool
-    .query(queryString, values)
-    .then((result) => {
-      console.log(result.rows[0]);
-      return result.rows[0];
-    })
-    .catch((result) => {
-      console.log(err.message);
-    });
-};
-
-createInvitation(url);
-exports.createInvitation = createInvitation;
-
 
