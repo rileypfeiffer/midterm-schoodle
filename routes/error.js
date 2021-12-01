@@ -5,9 +5,15 @@ const request = require('request');
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    console.log("error page");
-    const testData = fetchAPI("events");
-    console.log(testData);
+    // console.log("error page");
+    fetchAPI("users").then ( (apiData)=> {
+
+      // ************* HTML GOES HERE *****************
+
+    } )
+
+
+    // console.log("error page");
     res.render("error");
   });
   return router;

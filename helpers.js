@@ -42,18 +42,18 @@ const getOrganizer = (name, email) => {
     });
 };
 
-const fetchAPI = function(table) {
-  request(`http://localhost:8080/api/${table}`, (error, response, body) => { // Request function takes in URL and its contents
-    if (error) { // If error occurs, calls error
-      callback(error, null);
-    }
+const fetchAPI = function (table) {
+  return new Promise((resolve, reject) => {
+    request(`http://localhost:8080/api/${table}`, (error, response, body) => { // Request function takes in URL and its contents
+      // Converts body information into an object and stores in data
+      const data = JSON.parse(body);
+      resolve(data);
 
-    // Converts body information into an object and stores in data
-    const data = JSON.parse(body);
-    //console.log(data);
-    return data;
-  });
-};
+    })
+  }
+  )
+}
+
 
 // const getEventInfo = (title, location, date, description, timeslot1, timeslot2, timeslot3) => {
 
