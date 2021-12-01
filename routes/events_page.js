@@ -23,21 +23,20 @@ module.exports = (db) => {
     let values = [userID, title, url, location, date, description, timeslot1, timeslot2, timeslot3];
     db.query(query, values)
     .then(result => {
+      console.log('RESULT ROWS>>>>>>', result.rows[0])
       const url = generateRandomString()
       let updateQuery = `UPDATE events set url = $2 WHERE id = $1 `
-      console.log('RESULT ROWS>>>>>>', result.rows)
       const updateArray = [result.rows[0].id, url]
       db.query(updateQuery, updateArray)
       .then(result2 => {
-        res.redirect('/')
+       res.redirect('/')
       })
     })
     .catch(err => {
       console.log(err);
-
-
     })
   });
+
 
   return router;
 };
