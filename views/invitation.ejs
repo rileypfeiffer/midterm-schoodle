@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Schoodle Invitation</title>
+  <title>Schoodle: Invitation</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -36,12 +36,12 @@
   <div id="left-column-content">
     <div class="event-info">
     <i class="far fa-compass icon"></i>
-    <!-- pull location -->
+    <!-- location -->
     <p>111 Example Street, Brampton ON</p>
     </div>
     <div class="event-info">
     <i class="fas fa-calendar-week icon"></i>
-    <!-- pull date -->
+    <!-- date -->
     <p>September 21, 2021</p>
     </div>
     <div id="timeslots">
@@ -49,7 +49,7 @@
       <i class="far fa-clock icon"></i>
       <p>Timeslots</p>
       </div>
-    <!-- pull time slots with checkboxes to select -->
+    <!-- time slots -->
     <div id="times">
       <div class="time">
       <input type="checkbox" id="time-slot-1" name="time-slot-1">
@@ -67,10 +67,10 @@
     </div>
   </div>
   <div id="description-respondees">
-    <!-- pull description -->
+    <!-- description -->
     <label for="description"><b>Description:</b></label>
     <p>John Doe's 45th birthday party! Don't forget to bring your own beer!</p>
-    <!-- pull respondees -->
+    <!-- respondees -->
     <label for="respondee-list"><b>Respondees:</b></label>
     <ul>
       <li>Sally Salmon (ssalmon@yahoo.com): <i class="fas fa-check attending"></i></li>
@@ -79,8 +79,14 @@
     </ul>
   </section>
     <div id="decline-confirm">
-      <button type="submit" class="decline-confirm">Decline</button>
-      <button type="submit" class="decline-confirm">Confirm</button>
+      <form class="form-inline" action="/respondees" method="POST">
+        <label for="name">Name: </label>
+        <input type="text" name="name">
+        <label for="email">Email: </label>
+        <input type="email" name="email">
+        <button type="submit" class="decline-confirm">Decline</button>
+        <button type="submit" class="decline-confirm">Confirm</button>
+      </form>
     </div>
   </div>
 </body>
