@@ -1,0 +1,32 @@
+const express = require('express');
+const router = express.Router();
+
+module.exports = (db) => {
+  router.get("/", (req, res) => {
+    console.log("error page");
+    res.render("error");
+  });
+
+
+  // Get new short URL page, error if shortURL doesnt match any in db and if user doesnt match/exist
+  router.get("/invite/:randomUrl", (req, res) => {
+
+    let query = `SELECT (url) values ($1) returning *`;
+    console.log(req.body)
+    let values = [url];
+    db.query(query, values)
+      .then(result => {
+        console.log('RESULT ROWS>>>>>>', result.rows[0])
+        const randomUrl = result.rows[0]
+      })
+
+    const templateVars = { shortURL, longURL, user_id: users[user_id] };
+
+    // if (!templateVars.user_id || urlDatabase[shortURL].userID !== user_id) {
+    //   return res.status(403).send("Error 403: Please login before proceeding");
+    // }
+
+    res.render("invite/:id", templateVars);
+  });
+  return router;
+};

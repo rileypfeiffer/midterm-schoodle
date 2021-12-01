@@ -58,6 +58,7 @@ const organizersRoutes = require("./routes/organizers");
 const responsesRoutes = require("./routes/responses");
 const new_event = require("./routes/events_page");
 const invite = require("./routes/invitation_page");
+const error = require("./routes/error");
 
 
 // Mount all resource routes
@@ -69,6 +70,7 @@ app.use("/api/organizers", organizersRoutes(db));
 app.use("/api/responses", responsesRoutes(db));
 app.use("/new-event", new_event(db));
 app.use("/invite", invite(db));
+app.use("/error", error(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
