@@ -12,11 +12,10 @@ $(document).ready(function(){
             method: "POST",
             success: function(result){
                console.log(result)
-               $('#url-slidedown').text(result.data);
-               $('#url-slidedown').show();
+               $('#url-slidedown').text(`URL CREATED, localhost:8080/${result.data}`);
+               $('#url-slidedown').css({"visibility":"visible","display":"block"});
             },
             error: function(error){
-
             }
         })
     })
