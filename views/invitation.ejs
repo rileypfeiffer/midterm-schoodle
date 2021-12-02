@@ -66,12 +66,11 @@
   <div id="description-respondees">
     <label for="description"><b>Description:</b></label>
     <p><%= description %></p>
-    <!-- respondees -->
     <label for="respondee-list"><b>Respondees:</b></label>
     <ul>
-      <li>Sally Salmon (ssalmon@yahoo.com): <i class="fas fa-check attending"></i></li>
-      <li>John Doe (bdoe@gmail.com): <i class="fas fa-check attending"></i></li>
-      <li>Denis Rodman (drodman@yahoo.com): <i class="fas fa-times not-attending"></i></li>
+      <% for (let respondee of respondees) { %>
+        <li><%= respondee.name %> (<%= respondee.email %>)<i class="fas fa-check attending"></i></li>
+      <% } %>
     </ul>
   </section>
     <div id="decline-confirm">
@@ -88,3 +87,8 @@
 </section>
 </body>
 </html>
+
+
+<!-- <li>Sally Salmon (ssalmon@yahoo.com): <i class="fas fa-check attending"></i></li>
+<li>John Doe (bdoe@gmail.com): <i class="fas fa-check attending"></i></li>
+<li>Denis Rodman (drodman@yahoo.com): <i class="fas fa-times not-attending"></i></li> -->
