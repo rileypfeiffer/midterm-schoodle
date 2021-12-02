@@ -29,18 +29,18 @@
 <%- include('partials/_header') %>
 <section id="event">
   <div id="event-title-organizer">
-  <h2>TEST</h2>
-  <h4>Created By: Example Organizer</h4>
+  <h2><%= title %></h2>
+  <h4><%= name %></h4>
   </div>
   <section id="invitation-content">
   <div id="left-column-content">
     <div class="event-info">
     <i class="far fa-compass icon"></i>
-    <p>TEST</p>
+    <p><%= location %></p>
     </div>
     <div class="event-info">
     <i class="fas fa-calendar-week icon"></i>
-    <p>TEST</p>
+    <p><%= date %></p>
     </div>
     <div id="timeslots">
       <div class="event-info">
@@ -50,22 +50,22 @@
     <div id="times">
       <div class="time">
       <input type="checkbox" id="time-slot-1" name="time-slot-1">
-      <label class="time-label" for="time-slot-1">TEST</label>
+      <label class="time-label" for="time-slot-1"><%= timeslot1 %></label>
       </div>
       <div class="time">
       <input type="checkbox" id="time-slot-2" name="time-slot-2">
-      <label class="time-label" for="time-slot-2">TEST</label>
+      <label class="time-label" for="time-slot-2"><%= timeslot2 %></label>
       </div>
       <div class="time">
       <input type="checkbox" id="time-slot-3" name="time-slot-3">
-      <label class="time-label" for="time-slot-3">TEST</label>
+      <label class="time-label" for="time-slot-3"><%= timeslot3 %></label>
       </div>
     </div>
     </div>
   </div>
   <div id="description-respondees">
     <label for="description"><b>Description:</b></label>
-    <p>TEST</p>
+    <p><%= description %></p>
     <!-- respondees -->
     <label for="respondee-list"><b>Respondees:</b></label>
     <ul>

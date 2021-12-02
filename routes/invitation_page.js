@@ -7,5 +7,21 @@ module.exports = (db) => {
     res.render("invitation");
   });
 
+  router.get("/:url", (req, res) => {
+    db.query(`SELECT users.name, events.id, events.title, events.url, events.location, events.date, events.description, events.timeslot1, events.timeslot2, events.timeslot3 FROM events JOIN users ON events.organizer_id = users.id WHERE url = $1;`, [req.params.url])
+        .then(data => {
+          db.query(`SELECT users.name, users.email, responses.timeslot_response1, responses.timeslot_response2, responses.timeslot_response3 FROM responses JOIN users ON users.id = responses.responder_id WHERE event_id = $1;`, [data.rows[0].id])
+          .then(data2 => {
+            const templateVars = { name: data.rows[0].name, title: data.rows[0].title, url: data.rows[0].url, location: data.rows[0].location, date: data.rows[0].date, description: data.rows[0].description, timeslot1: data.rows[0].timeslot1, timeslot2: data.rows[0].timeslot2, timeslot3: data.rows[0].timeslot3, respondees: data2.rows };
+            res.render("invitation", templateVars);
+          })
+        })
+        .catch(err => {
+          res
+            .status(500)
+            .json({ error: err.message });
+        })
+  });
+
   return router;
 };
