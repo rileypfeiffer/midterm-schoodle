@@ -16,10 +16,10 @@ module.exports = (db) => {
   // });
 
   router.post("/", (req, res) => {
-    const {title, url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
+    const {id, title, url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
     let query = `INSERT INTO events (organizer_id, title, url, location, date, description, timeslot1, timeslot2, timeslot3) values ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning *`;
     console.log(req.body)
-    let values = [1, title, url, location, date, description, timeslot1, timeslot2, timeslot3];
+    let values = [id, title, url, location, date, description, timeslot1, timeslot2, timeslot3];
     db.query(query, values)
     .then(result => {
       const url = generateRandomString()
