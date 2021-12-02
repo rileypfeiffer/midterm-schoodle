@@ -13,7 +13,7 @@ $(document).ready(function(){
              console.log(result)
              $('#url-slidedown').text(result.data);
              $('#url-slidedown').show();
-             $('#url-slidedown').text(`URL CREATED, localhost:8080/${result.data}`);
+             $('#url-slidedown').text(`URL CREATED, <a href="localhost:8080/${result.data}">localhost:8080/${result.data}</a>`);
              $('#url-slidedown').css({"visibility":"visible","display":"block"});
             setTimeout(() => {
               window.location.href = `/invite/${result.data}`
