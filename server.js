@@ -72,7 +72,7 @@ app.use("/api/responses", responsesRoutes(db));
 app.use("/new-event", new_event(db));
 app.use("/invite", invite(db));
 app.use("/error", error(db));
-app.use("/invite/random_url", random_url(db));
+// app.use("/invite/random_url", random_url(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page

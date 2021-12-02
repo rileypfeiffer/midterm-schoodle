@@ -2,10 +2,10 @@ const express = require('express');
 const router  = express.Router();
 
 module.exports = (db) => {
-  router.get("/", (req, res) => {
-    console.log("test");
-    res.render("invitation");
-  });
+  // router.get("/", (req, res) => {
+  //   console.log("test");
+  //   res.render("invitation");
+  // });
 
   router.get("/:url", (req, res) => {
     db.query(`SELECT users.name, events.id, events.title, events.url, events.location, events.date, events.description, events.timeslot1, events.timeslot2, events.timeslot3 FROM events JOIN users ON events.organizer_id = users.id WHERE url = $1;`, [req.params.url])
