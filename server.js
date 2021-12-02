@@ -95,8 +95,7 @@ app.post("/organizer", (req, res) => {
   const orgEmail = req.body.email;
   getOrganizer(orgName, orgEmail)
   .then (result => {
-    console.log('>>>>>>>>>>>>>>', result)
-    exports.getOrganizer = getOrganizer;
+    console.log('>>>>>>>>>>>>>>', result.id)
     req.session.org_id = orgEmail;
     req.session.user_id = result.id
     res.redirect(`/new-event`);

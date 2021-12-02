@@ -16,10 +16,11 @@ module.exports = (db) => {
   // });
 
   router.post("/", (req, res) => {
-    const {id, title, url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
-    let query = `INSERT INTO events (organizer_id, title, url, location, date, description, timeslot1, timeslot2, timeslot3) values ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning *`;
+    const { title, url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
+    let userID = req.session.user_id
+    let query = `INSERT INTO events ( organizer_id, title, url, location, date, description, timeslot1, timeslot2, timeslot3) values ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning *`;
     console.log(req.body)
-    let values = [id, title, url, location, date, description, timeslot1, timeslot2, timeslot3];
+    let values = [userID, title, url, location, date, description, timeslot1, timeslot2, timeslot3];
     db.query(query, values)
     .then(result => {
       const url = generateRandomString()
@@ -33,7 +34,6 @@ module.exports = (db) => {
     })
     .catch(err => {
       console.log(err);
-
 
     })
   });
