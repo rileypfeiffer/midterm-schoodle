@@ -5,35 +5,25 @@ const request = require('request');
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    // console.log("error page");
-    fetchAPI("events").then((apiData) => {
 
-      let eventTitle = ""
-      let eventLocation = ""
-      let eventDate = ""
-      let eventtimeslot1 = ""
-      let eventtimeslot2 = ""
-      let eventtimeslot3 = ""
-      let urlLookup = '3MshqBBNTOUknZmD3CDJ';
-      // console.log(apiData);
-      for (let data of apiData.events) {
-        console.log("THISONE >>>>>>>>>", data.date);
-        if (data.url === urlLookup) {
-          eventTitle = data.title
-          eventLocation = data.location
-          eventDate = data.date
-          eventtimeslot1 = data.timeslot1
-          eventtimeslot2 = data.timeslot2
-          eventtimeslot3 = data.timeslot3
-        } else {
-          res.render("error");
-        }
-      }
+    let urlLookup = '3MshqBBNTOUknZmD3CDJ';
+    // console.log(apiData);
+    let query = `
+      SELECT users.name as organizer_name, title, url, location, date, description, timeslot1, timeslot2, timeslot3
+      FROM events
+      JOIN users ON events.organizer_id = users.id
+      WHERE url = $1
+      ;`
+    db.query(query, [urlLookup])
+      .then(result => {
 
+        console.log('RESULT ROWS>>>>>>', result.rows)
 
+      })
+      .catch(err => {
+        console.log(err);
 
-    })
-
+      })
 
     // console.log("error page");
     res.render("error");
