@@ -9,12 +9,6 @@ module.exports = (db) => {
     res.render("new-event");
   });
 
-  // router.post("/", (req, res) => {
-
-
-  //   res.redirect("/new-event");
-  // });
-
   router.post("/", (req, res) => {
     const { title, url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
     let userID = req.session.user_id
