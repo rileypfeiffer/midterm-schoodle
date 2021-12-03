@@ -50,7 +50,7 @@ module.exports = (db) => {
               console.log(error);
             })
 
-        res.redirect(`/new-event`);
+        res.redirect(`/:url`);
 
   });
 
