@@ -46,10 +46,17 @@ module.exports = (db) => {
             .then (results3 => {
               // res.json({results3})
               console.log(results3, "THIS ONE <<<<<<<");
+              let query = `
+            SELECT url
+            FROM events
+            WHERE id = ${eventID};
+            ;
+            `;
             })
             .catch (error => {
               console.log(error);
             })
+
 
 
   });

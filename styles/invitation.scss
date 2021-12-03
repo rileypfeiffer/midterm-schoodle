@@ -1,11 +1,11 @@
 #event {
   width: 50%;
-  background-color:#5E6472;
+  background-color:#FFFFFF;
   padding: 2em;
   margin-top: 10em;
   font-family: "Comfortaa";
-  color: #F7DBA7;
-  filter: drop-shadow(20px 10px 4px #A27035);
+  color: #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #event-title-organizer {
@@ -15,13 +15,13 @@
   font-family: "Roboto";
 }
 
-#left-column-content {
-  width: 25%;
-}
-
 #invitation-content {
   display: flex;
   flex-direction: row;
+}
+
+#left-column-content {
+  width: 25%;
 }
 
 .event-info {
@@ -77,6 +77,6 @@
   justify-content: end;
 }
 
-.decline-confirm {
-  margin: 0.5em;
+.space-left {
+  margin-left: 0.5em;
 }
