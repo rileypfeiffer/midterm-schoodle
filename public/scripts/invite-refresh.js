@@ -6,14 +6,16 @@ $(document).ready(function(){
       event.preventDefault();
       console.log($data)
       $.ajax({
-          url:"/invite",
+          url:`/invite`,
           data: $data,
           method: "POST",
           success: function(result){
              console.log(result)
-
+             event.preventDefault();
              $('.response-list').show();
-             console.log('>>>>>>>>>>>>>>HELLO WORLD', $('#createdURL').text());
+             window.location.reload();
+
+             console.log('>>>>>>>>>>>>>>HELLO WORLD', result.data);
             // setTimeout(() => {
             //   window.location.href = `/invite/${result.data}`
             // }, 5000)

@@ -44,6 +44,7 @@ module.exports = (db) => {
             let values = [eventID, attID, timeslot_response1, timeslot_response2, timeslot_response3 ];
             db.query(query, values)
             .then (results3 => {
+              // res.json({results3})
               console.log(results3, "THIS ONE <<<<<<<");
             })
             .catch (error => {
