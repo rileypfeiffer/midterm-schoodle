@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 
+// renders organizers API page
 module.exports = (db) => {
   router.get("/", (req, res) => {
     let query = `SELECT * FROM users`;

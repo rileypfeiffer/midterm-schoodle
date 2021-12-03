@@ -72,7 +72,6 @@ app.use("/api/responses", responsesRoutes(db));
 app.use("/new-event", new_event(db));
 app.use("/invite", invite(db));
 app.use("/error", error(db));
-// app.use("/invite/random_url", random_url(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -88,37 +87,18 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 
-//grab organizer id
-
+// Grabs email and name from landing page and redirects to new-event
 app.post("/organizer", (req, res) => {
   const orgName = req.body.name;
   const orgEmail = req.body.email;
-
-  if (!orgName) {
-    alert("Your name cannot be blank!");
-  } else if (!orgEmail) {
-    alert("Your email cannot be blank!");
-  } else {
-
   getOrganizer(orgName, orgEmail)
   .then (result => {
-    console.log('>>>>>>>>>>>>>>', result.id)
     req.session.org_id = orgEmail;
     req.session.user_id = result.id
     res.redirect(`/new-event`);
   })
   .catch(err => {
     console.log(err);
-
   })
-  }
-
 });
-
-// Create new event
-
-// app.post("new-event", (req, res) => {
-
-// })
-
 

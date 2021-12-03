@@ -5,6 +5,7 @@
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
 
+// Renders response API page
 const express = require('express');
 const router  = express.Router();
 
