@@ -9,6 +9,7 @@ module.exports = (db) => {
     res.render("new-event");
   });
 
+  // Queries db and posts event information to new random URL
   router.post("/", (req, res) => {
     const { title, url, location, date, description, timeslot1, timeslot2, timeslot3} = req.body;
     let userID = req.session.user_id
@@ -19,7 +20,6 @@ module.exports = (db) => {
     .then(result => {
       const url = generateRandomString()
       let updateQuery = `UPDATE events set url = $2 WHERE id = $1 `
-      console.log('RESULT ROWS>>>>>>', result.rows)
       const updateArray = [result.rows[0].id, url]
       req.session.event_id = result.rows[0].id;
       console.log(req.session.event_id);
@@ -36,15 +36,4 @@ module.exports = (db) => {
 
   return router;
 };
-
-// const title = req.body.title;
-// const location = req.body.location;
-// const date = req.body.date;
-// const description = req.body.description;
-// const timeslot1 = req.body.timeslot1;
-// const timeslot2 = req.body.timeslot2;
-// const timeslot3 = req.body.timeslot3;
-// getEventInfo(title, location, date, description, timeslot1, timeslot2, timeslot3);
-
-
 
