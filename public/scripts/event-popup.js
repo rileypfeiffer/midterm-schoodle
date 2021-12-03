@@ -17,7 +17,7 @@ $(document).ready(function () {
         $('.popup').show();
         $('#createdURL').show();
         $('.fa-clipboard').show();
-        $('#createdURL').text(`URL CREATED! Press here to be redirected, or press the clipboard to copy`)
+        $('#createdURL').text(` Click here to be redirected to the event!, or press the clipboard to copy`)
         $('#createdURL').attr('href', `/invite/${result.data}`)
         console.log('>>>>>>>>>>>>>>HELLO WORLD', $('#createdURL').text());
       },
@@ -27,6 +27,6 @@ $(document).ready(function () {
   })
 
   $('.fa-clipboard').click(function () {
-
+    document.execCommand("copy");
   })
 });

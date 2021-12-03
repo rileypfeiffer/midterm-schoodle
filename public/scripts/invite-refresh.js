@@ -14,7 +14,6 @@ $(document).ready(function(){
              event.preventDefault();
              $('.response-list').show();
              window.location.reload();
-
              console.log('>>>>>>>>>>>>>>HELLO WORLD', result.data);
             // setTimeout(() => {
             //   window.location.href = `/invite/${result.data}`
