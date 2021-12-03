@@ -19,47 +19,95 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Disable Viewport Zooming-->
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 </head>
 
 <body>
-<%- include('partials/_header') %>
-<section id="event">
-  <div id="event-title-organizer">
-  <h2><%= title %></h2>
-  <h4><%= name %></h4>
-  </div>
-  <section id="invitation-content">
-  <div id="left-column-content">
-    <div class="event-info">
-    <i class="far fa-compass icon"></i>
-    <p><%= location %></p>
-    </div>
-    <div class="event-info">
-    <i class="fas fa-calendar-week icon"></i>
-    <p><%= date %></p>
-    </div>
-    <div id="timeslots">
-      <div class="event-info">
-      <i class="far fa-clock icon"></i>
-      <p>Timeslots</p>
+  <%- include('partials/_header') %>
+    <section id="event">
+      <div id="event-title-organizer">
+        <h2>
+          <%= title %>
+        </h2>
+        <h4>
+          <%= name %>
+        </h4>
       </div>
-    <div id="times">
-      <div class="time">
-      <input type="checkbox" id="time-slot-1" name="time-slot-1">
-      <label class="time-label" for="time-slot-1"><%= timeslot1 %></label>
+      <section id="invitation-content">
+        <div id="left-column-content">
+          <div class="event-info">
+            <i class="far fa-compass icon"></i>
+            <p>
+              <%= location %>
+            </p>
+          </div>
+          <div class="event-info">
+            <i class="fas fa-calendar-week icon"></i>
+            <p>
+              <%= date %>
+            </p>
+          </div>
+          <div id="timeslots">
+            <div class="event-info">
+              <i class="far fa-clock icon"></i>
+              <p>Timeslots</p>
+            </div>
+            <div id="times">
+              <div class="time">
+                <form class="form-inline" action="/invite/response" method="POST">
+                <input type="checkbox" id="time-slot-1" name="timeslot_response1">
+                <label class="time-label" for="time-slot-1">
+                  <%= timeslot1 %>
+                </label>
+              </div>
+              <div class="time">
+                <input type="checkbox" id="time-slot-2" name="timeslot_response2">
+                <label class="time-label" for="time-slot-2">
+                  <%= timeslot2 %>
+                </label>
+              </div>
+              <div class="time">
+                <input type="checkbox" id="time-slot-3" name="timeslot_response3">
+                <label class="time-label" for="time-slot-3">
+                  <%= timeslot3 %>
+                </label>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="description-respondees">
+          <label for="description"><b>Description:</b></label>
+          <p>
+            <%= description %>
+          </p>
+          <!-- respondees -->
+          <label for="respondee-list"><b>Respondees:</b></label>
+          <ul>
+            <li>Sally Salmon (ssalmon@yahoo.com): <i class="fas fa-check attending"></i></li>
+            <li>John Doe (bdoe@gmail.com): <i class="fas fa-check attending"></i></li>
+            <li>Denis Rodman (drodman@yahoo.com): <i class="fas fa-times not-attending"></i></li>
+          </ul>
+      </section>
+      <div id="decline-confirm">
+
+          <label for="name">Name: </label>
+          <input type="text" name="name">
+          <label for="email">Email: </label>
+          <input type="email" name="email">
+          <button type="submit" class="decline-confirm">Decline</button>
+          <button type="submit" class="decline-confirm">Confirm</button>
+        </form>
       </div>
-      <div class="time">
-      <input type="checkbox" id="time-slot-2" name="time-slot-2">
-      <label class="time-label" for="time-slot-2"><%= timeslot2 %></label>
       </div>
-      <div class="time">
-      <input type="checkbox" id="time-slot-3" name="time-slot-3">
-      <label class="time-label" for="time-slot-3"><%= timeslot3 %></label>
-      </div>
+
+    </section>
+
     </div>
     </div>
   </div>
@@ -74,7 +122,7 @@
     </ul>
   </section>
     <div id="decline-confirm">
-      <form class="form-inline" action="/respondees" method="POST">
+
         <label for="name">Name: </label>
         <input type="text" name="name">
         <label for="email">Email: </label>
@@ -86,6 +134,7 @@
   </div>
 </section>
 </body>
+
 </html>
 
 

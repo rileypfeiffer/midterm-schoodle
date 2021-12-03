@@ -34,7 +34,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieSession({
   name: 'session',
-  keys: ["key1", "key2"],
+  keys: ["key1", "key2", "key3"],
 
 }));
 
