@@ -9,3 +9,4 @@ CREATE TABLE responses (
   timeslot_response2 BOOLEAN NOT NULL,
   timeslot_response3 BOOLEAN NOT NULL
 );
+

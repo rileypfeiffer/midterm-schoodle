@@ -30,6 +30,7 @@
 <body>
   <%- include('partials/_header') %>
     <section id="new-event">
+     <div><a id="createdURL"></a><i class="fas fa-clipboard"></i></div>
       <h2 id="create-event-label">Create Event: </h2>
       <form id="event-form" method="POST" action="/new-event">
         <div class="event-info">
@@ -211,8 +212,9 @@
           <button type="submit" id="create-event-button">Create Event</button>
         </div>
       </form>
-      <span id="url-slidedown">Event URL Created: </span>
+      <span id="url-slidedown">Event URL  </span>
     </section>
+
 </body>
 
 </html>

@@ -100,6 +100,10 @@ app.post("/organizer", (req, res) => {
     req.session.user_id = result.id
     res.redirect(`/new-event`);
   })
+  .catch(err => {
+    console.log(err);
+
+  })
 });
 
 // Create new event
