@@ -45,10 +45,17 @@ module.exports = (db) => {
             db.query(query, values)
             .then (results3 => {
               console.log(results3, "THIS ONE <<<<<<<");
+              let query = `
+            SELECT url
+            FROM events
+            WHERE id = ${eventID};
+            ;
+            `;
             })
             .catch (error => {
               console.log(error);
             })
+
 
 
   });
