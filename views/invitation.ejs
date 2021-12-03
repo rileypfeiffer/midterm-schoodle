@@ -69,7 +69,11 @@
     <label for="respondee-list"><b>Respondees:</b></label>
     <ul>
       <% for (let respondee of respondees) { %>
+        <% if (!respondee.timeslot_response1 && !respondee.timeslot_response2 && !respondee.timeslot_response3) { %>
+        <li><%= respondee.name %> (<%= respondee.email %>)<i class="fas fa-check not-attending"></i></li>
+        <% } else { %>
         <li><%= respondee.name %> (<%= respondee.email %>)<i class="fas fa-check attending"></i></li>
+        <% } %>
       <% } %>
     </ul>
   </section>
@@ -79,7 +83,6 @@
         <input type="text" name="name">
         <label for="email">Email: </label>
         <input type="email" name="email">
-        <button type="submit" class="decline-confirm">Decline</button>
         <button type="submit" class="decline-confirm">Confirm</button>
       </form>
     </div>
