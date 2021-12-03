@@ -22,11 +22,14 @@ module.exports = (db) => {
     let values = [responder_id, timeslot_response1 , timeslot_response2, timeslot_response3];
     db.query(query, values)
     .then(result => {
+
       return result.rows[0].id;
+
     })
     .catch(err => {
       console.log(err);
     })
+
   });
   return router;
 };

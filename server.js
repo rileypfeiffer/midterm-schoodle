@@ -34,7 +34,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieSession({
   name: 'session',
-  keys: ["key1", "key2", "key3"],
+  keys: ["key1", "key2", "key3, key4"],
 
 }));
 
@@ -93,6 +93,13 @@ app.listen(PORT, () => {
 app.post("/organizer", (req, res) => {
   const orgName = req.body.name;
   const orgEmail = req.body.email;
+
+  if (!orgName) {
+    alert("Your name cannot be blank!");
+  } else if (!orgEmail) {
+    alert("Your email cannot be blank!");
+  } else {
+
   getOrganizer(orgName, orgEmail)
   .then (result => {
     console.log('>>>>>>>>>>>>>>', result.id)
@@ -104,6 +111,8 @@ app.post("/organizer", (req, res) => {
     console.log(err);
 
   })
+  }
+
 });
 
 // Create new event

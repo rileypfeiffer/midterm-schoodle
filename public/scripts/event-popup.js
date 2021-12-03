@@ -19,6 +19,7 @@ $(document).ready(function () {
         $('.fa-clipboard').show();
         $('#createdURL').text(`URL CREATED! Press here to be redirected, or press the clipboard to copy`)
         $('#createdURL').attr('href', `/invite/${result.data}`)
+        req.session.url = result.data;
         console.log('>>>>>>>>>>>>>>HELLO WORLD', $('#createdURL').text());
 
       },
