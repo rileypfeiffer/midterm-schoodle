@@ -88,9 +88,9 @@
     <ul class="response-list">
       <% for (let respondee of respondees) { %>
         <% if (!respondee.timeslot_response1 && !respondee.timeslot_response2 && !respondee.timeslot_response3) { %>
-        <li><%= respondee.name %> (<%= respondee.email %>)<i class="fas fa-times not-attending"></i></li>
+        <li><%= respondee.name %> (<%= respondee.email %>) <i class="fas fa-times not-attending"></i></li>
         <% } else { %>
-        <li><%= respondee.name %> (<%= respondee.email %>)<i class="fas fa-check attending"></i></li>
+        <li><%= respondee.name %> (<%= respondee.email %>) <i class="fas fa-check attending"></i></li>
         <% } %>
       <% } %>
     </ul>
