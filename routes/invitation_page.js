@@ -34,13 +34,14 @@ module.exports = (db) => {
         req.session.att_id = result.id})
           .then(results2 => {
             const { timeslot_response1, timeslot_response2, timeslot_response3 } = req.body;
-            let attID = req.session.att_id
+            let attID = req.session.att_id;
+            let eventID =  req.session.event_id;
             let query = `
-            INSERT INTO responses (responder_id, timeslot_response1, timeslot_response2, timeslot_response3)
-            VALUES ($1, $2, $3, $4)
+            INSERT INTO responses (event_id, responder_id, timeslot_response1, timeslot_response2, timeslot_response3)
+            VALUES ($1, $2, $3, $4, $5)
             ;
             `;
-            let values = [attID, timeslot_response2, timeslot_response2, timeslot_response3 ];
+            let values = [eventID, attID, timeslot_response1, timeslot_response2, timeslot_response3 ];
             db.query(query, values)
             .then (results3 => {
               console.log(results3, "THIS ONE <<<<<<<");

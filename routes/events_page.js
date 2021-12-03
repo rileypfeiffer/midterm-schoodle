@@ -21,6 +21,8 @@ module.exports = (db) => {
       let updateQuery = `UPDATE events set url = $2 WHERE id = $1 `
       console.log('RESULT ROWS>>>>>>', result.rows)
       const updateArray = [result.rows[0].id, url]
+      req.session.event_id = result.rows[0].id;
+      console.log(req.session.event_id);
       db.query(updateQuery, updateArray)
       .then(result2 => {
         res.json({data: url})
