@@ -17,7 +17,7 @@ $(document).ready(function () {
         $('.popup').show();
         $('#createdURL').show();
         $('.fa-clipboard').show();
-        $('#createdURL').text(` Click here to be redirected to the event!, or press the clipboard to copy`)
+        $('#createdURL').text(` Click here to be redirected to the event!`)
         $('#createdURL').attr('href', `/invite/${result.data}`)
         req.session.url = result.data;
         console.log('>>>>>>>>>>>>>>HELLO WORLD', $('#createdURL').text());
