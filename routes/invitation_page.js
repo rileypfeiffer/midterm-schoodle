@@ -44,13 +44,7 @@ module.exports = (db) => {
             let values = [eventID, attID, timeslot_response1, timeslot_response2, timeslot_response3 ];
             db.query(query, values)
             .then (results3 => {
-              // db.query (`
-              // SELECT url
-              // FROM events
-              // WHERE id = $1
-              // ;`, [req.session.event_id])
-              // .then (savedUrl => {
-              //   console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>", savedUrl.rows[0].url);
+
                 res.redirect(`back`);
               })
 
