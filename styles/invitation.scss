@@ -15,13 +15,13 @@
   font-family: "Roboto";
 }
 
-#left-column-content {
-  width: 25%;
-}
-
 #invitation-content {
   display: flex;
   flex-direction: row;
+}
+
+#left-column-content {
+  width: 25%;
 }
 
 .event-info {
@@ -77,6 +77,6 @@
   justify-content: end;
 }
 
-.decline-confirm {
-  margin: 0.5em;
+.space-left {
+  margin-left: 0.5em;
 }
