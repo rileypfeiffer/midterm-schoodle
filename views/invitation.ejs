@@ -59,7 +59,7 @@
             </div>
             <div id="times">
               <div class="time">
-                <form class="form-inline" action="/invite/response" method="POST">
+                <form id="response-submit" class="form-inline" action="/invite/response" method="POST">
                 <input type="checkbox" id="time-slot-1" name="timeslot_response1">
                 <label class="time-label" for="time-slot-1">
                   <%= timeslot1 %>
@@ -85,7 +85,7 @@
           <label for="description"><b>Description:</b></label>
     <p><%= description %></p>
     <label for="respondee-list"><b>Respondees:</b></label>
-    <ul>
+    <ul class="response-list">
       <% for (let respondee of respondees) { %>
         <% if (!respondee.timeslot_response1 && !respondee.timeslot_response2 && !respondee.timeslot_response3) { %>
         <li><%= respondee.name %> (<%= respondee.email %>)<i class="fas fa-times not-attending"></i></li>

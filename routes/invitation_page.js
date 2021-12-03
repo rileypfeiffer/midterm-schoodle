@@ -50,7 +50,6 @@ module.exports = (db) => {
               console.log(error);
             })
 
-        res.redirect(`/:url`);
 
   });
 
