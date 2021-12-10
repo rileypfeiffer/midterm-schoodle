@@ -28,6 +28,5 @@ $(document).ready(function () {
   })
 
   $('.fa-clipboard').click(function () {
-    document.execCommand("copy");
   })
 });
