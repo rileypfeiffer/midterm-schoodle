@@ -9,20 +9,8 @@ With Schoodle, sending invites becomes easier!
 ## Dependencies
 
 - Node 10.x or above
-- NPM 5.x or above
 - PG 6.x
-- body-parser 1.19.0
-- chalk 2.4.2x 
-- cookie-parser 1.4.6 
-- cookie-session 1.4.0 
-- dotenv: 2.0.0 
-- ejs 2.6.2
 - express 4.17.1
-- morgan 1.9.1
-- pg 8.5.0
-- pg-native 3.0.0
-- request 2.88.2
-- sass 1.35.1
 
 ### Schoodle Homepage!
 
